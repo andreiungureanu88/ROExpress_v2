@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="CustomItemTemplate">
+        <Border Background="#0B1C60" CornerRadius="10" Padding="10" Width="435" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock  x:Name="DepartStationTextBlock"
+                                      Text="{Binding DepartStation}" 
+                                       FontSize="18"
+                                       Height="35" 
+                                       VerticalAlignment="Center" 
+                                       FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis" />
+                            <TextBlock x:Name="DepartTimeTextBlock"
+                                        Text="{Binding DepartTime}"
+                                       FontSize="16" 
+                                       Height="35" 
+                                       VerticalAlignment="Center" 
+                                       FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                        </StackPanel>
+                        <Image Source="/ROExpress_GUI;component\Assets\Icons\arrowIcon_3.png" Width="30" Height="30" Margin="40,0,40,0"/>
+                        <StackPanel>
+                            <TextBlock x:Name="ArriveStationTextBlock" Text="{Binding ArriveStation}" FontSize="18" Height="30" VerticalAlignment="Center" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                            <TextBlock x:Name="ArriveTimeTextBlock" Text="{Binding ArriveTime}" FontSize="16" Height="30" VerticalAlignment="Center" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock x:Name="TrainIDTextBlock" Text="{Binding ID}" FontSize="18"  FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                    <TextBlock x:Name="TravelTimeTextBlock" Text="{Binding TravelTime}" FontSize="16"  FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                    <TextBlock Text="Clasa 1, Clasa 2" FontSize="14" Foreground="ForestGreen" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+
+                </StackPanel>
+                <StackPanel Grid.Column="0">
+                    <Image Source="X:\Proiect_ABD\ROExpress\ROExpress_GUI\Assets\Icons\LocationIcon_2.png" Width="30" HorizontalAlignment="Left"/>
+                    <Image Source="X:\Proiect_ABD\ROExpress\ROExpress_GUI\Assets\Icons\ClockIcon_2.png" Width="30" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                    <Image Source="X:\Proiect_ABD\ROExpress\ROExpress_GUI\Assets\Icons\TrainIcon_2.png" Width="30" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                </StackPanel>
+
+               
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+</ResourceDictionary>
