@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="ROExpress_GUI.MVVM.View.TravelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ROExpress_GUI.MVVM.View" xmlns:viewmodel="clr-namespace:ROExpress_GUI.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:TravelViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="740" d:DesignWidth="910">
+    <ContentControl x:Name="contentContainer">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Where do you want to travel?"
+           FontSize="30"
+           Foreground="#ECD5BB"
+           HorizontalAlignment="Left"
+           Margin="0,20,0,0" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis SemiBold"/>
+
+                <StackPanel x:Name="StackPanelLeaves"
+            Orientation="Horizontal"
+            Margin="0,30,30,0">
+                    <TextBlock Text="From:"
+               FontSize="30"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="0,0,0,0"
+               Foreground="#ECD5BB" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                    <TextBox x:Name="LeavesTextBox"
+         Width="200"
+         Height="40"
+         Margin="10,5,0,0"
+         HorizontalAlignment="Left"
+         VerticalAlignment="Center"
+         Style="{StaticResource TextBoxTheme}"
+         FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"
+         KeyUp="LeavesTextBox_KeyUp"
+         />
+                </StackPanel>
+
+                <StackPanel x:Name="StackPanelArrives"
+            Orientation="Horizontal"
+            Margin="0,30,30,0">
+                    <TextBlock Text="To:"
+               FontSize="30"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="0,0,0,0"
+               Foreground="#ECD5BB" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                    <TextBox x:Name="ArrivesTextBox"
+         Width="200"
+         Height="40"
+         Margin="46,5,0,0"
+         HorizontalAlignment="Left"
+         VerticalAlignment="Center"
+         Style="{StaticResource TextBoxTheme}" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"
+         KeyUp="ArrivesTextBox_KeyUp"/>
+                </StackPanel>
+                <StackPanel x:Name="StackPanelDate"
+            Orientation="Horizontal"
+            Margin="0,30,30,0">
+                    <TextBlock Text="Date:"
+               FontSize="30"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="0,0,0,0"
+               Foreground="#ECD5BB" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                    <DatePicker x:Name="TravelDatePicker"
+                Width="150"
+                Text="{Binding}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="30,0,0,0"
+                BorderThickness="0"
+                />
+                </StackPanel>
+                <Button      x:Name="TravelSearchButton"
+             Width="200"
+             Height="40"
+             Margin="50,50,0,0"
+             HorizontalAlignment="Left"
+             Content="Search"
+             Foreground="#ECD5BB"
+             VerticalAlignment="Bottom"
+             FontSize="30" 
+             Style="{StaticResource NormalButtonTheme}"
+             Click="FindTrain" 
+             FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"
+             />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <ListBox x:Name="ListaCalatorii" BorderThickness="0" FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"
+         Background="Transparent"
+         Foreground="#ECD5BB"
+         VerticalAlignment="Stretch"
+         HorizontalAlignment="Stretch"
+         ItemTemplate="{StaticResource CustomItemTemplate}"
+         Width="450" 
+         Height="740"
+         MouseDoubleClick="ListaCalatorii_MouseDoubleClick"
+         />
+            </StackPanel>
+        </Grid>
+    </ContentControl>
+</UserControl>

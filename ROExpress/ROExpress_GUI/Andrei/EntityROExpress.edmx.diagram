@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8970ad91dd6742da8eefa925989742f4" Name="Diagram1">
+        <EntityTypeShape EntityType="ROExpressEntity.Bilet_Tren" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.Calatorii" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.Statii" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.Statii_Tren" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.Tipuri_Vagoane" Width="1.5" PointX="3.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.Trenuri" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROExpressEntity.Vagoane_Tren" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="ROExpressEntity.FK__Bilet_Tre__ID_Tr__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ROExpressEntity.FK__Calatorii__ID_St__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ROExpressEntity.FK__Statii_Tr__ID_St__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ROExpressEntity.FK__Statii_Tr__ID_Tr__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="ROExpressEntity.FK__Vagoane_T__ID_Va__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="ROExpressEntity.FK__Vagoane_T__ID_Tr__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,128 @@
+﻿<Window x:Class="ROExpress_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:ROExpress_GUI.MVVM.ViewModel"
+        xmlns:local="clr-namespace:ROExpress_GUI"
+        mc:Ignorable="d"
+        Title="ROExpress" Height="800" Width="1200"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        >
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border CornerRadius="20">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                <GradientStop Color="#0B1C48" Offset="0.35"/>
+                <GradientStop Color="#0B1C26" Offset="0.8"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="920"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="750"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="0"
+                       Grid.ColumnSpan="3"
+                       RadiusX="10"
+                       RadiusY="10"
+                       Fill="#710117"
+                       MouseUp="Window_MouseLeftButtonUp"
+                       MouseMove="Window_MouseMove"
+                       MouseDown="Window_MouseLeftButtonDown"/>
+
+            <TextBlock x:Name="Title"
+                   Grid.Row="0"
+                   Text="ROExpress"
+                   FontSize="30"
+                   Foreground="#ECD5BB"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="20,0,0,0"
+                   FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis ExtraBold"/>
+
+            <StackPanel Grid.Row="1" Grid.RowSpan="2" Background="#0B1C26">
+                <RadioButton x:Name="TravelRadioButton"
+                             Content="Travel"
+                             Height="50"
+                             Foreground="#ECD5BB"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding TravelViewCommand}"
+                             FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                <RadioButton x:Name="MyTrainRadioButton"
+                             Content="My Train"
+                             Height="50"
+                             Foreground="#ECD5BB"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding MyTrainViewCommand}" 
+                             FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+                <RadioButton Content="Stations"
+                             x:Name="StationsRadioButton"
+                             Height="50"
+                             Foreground="#ECD5BB"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding StationsViewCommand}" 
+                             FontFamily="/ROExpress_GUI;component/Assets/Fonts/#Dosis"/>
+               
+            </StackPanel>
+            <Button x:Name="CloseProgramButton"
+                    Content="X"
+                    FontSize="20"
+                    Height="30"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    BorderThickness="0" 
+                    Click="CloseApplication" 
+                    ClickMode="Press"
+                    Style="{StaticResource NormalButtonTheme}"/>
+
+
+            <ContentControl x:Name="mainContentControl"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,10,10,10"
+                            Content="{Binding CurrentView}">
+
+
+            </ContentControl>
+            <Button x:Name="HideProgramButton"
+                Content="_"
+                FontSize="20"
+                Width="30"
+                Height="30"
+                Grid.Row="0"
+                Grid.Column="1"
+                Foreground="Black"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                BorderThickness="0"
+                Click="HideApplication" 
+                FontWeight="Bold" 
+                ClickMode="Press"
+                Style="{StaticResource NormalButtonTheme}"
+                 />
+        </Grid>
+    </Border>
+
+
+
+</Window>

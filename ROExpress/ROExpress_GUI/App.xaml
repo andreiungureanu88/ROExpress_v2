@@ -1,0 +1,43 @@
+﻿<Application x:Class="ROExpress_GUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ROExpress_GUI"
+             xmlns:viewModel="clr-namespace:ROExpress_GUI.MVVM.ViewModel"
+             xmlns:view="clr-namespace:ROExpress_GUI.MVVM.View"
+             StartupUri="MVVM/View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DataPickerTheme.xaml"/>
+                <ResourceDictionary Source="Theme/NormalButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/CustomItemTheme.xaml"/>
+                <ResourceDictionary Source="Theme/CustomItemStationsTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ArrivalDeparturesCustomRadioButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/CustomComboBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:TravelViewModel}">
+                <view:TravelView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:StationsViewModel}">
+                <view:StationsView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:MyTrainViewModel}">
+                <view:MyTrainView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:AccountViewModel}">
+                <view:AccountView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
